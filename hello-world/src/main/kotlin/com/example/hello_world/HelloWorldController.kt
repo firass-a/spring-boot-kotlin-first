@@ -5,11 +5,13 @@ import org.springframework.web.bind.annotation.RestController
 
 
 @RestController
-class HelloWorldController {
+class MessageController {
     @GetMapping("/")
-    fun helloWorld(): String
-    {
-        return "hello from firas!!"
-    }
+    fun listMessages() = listOf<Message>(
+        Message("1" , "hello"),
+        Message("2" , "Bonjour"),
+        Message("3" , "Privet ! "),
+
+    )
 
 }
